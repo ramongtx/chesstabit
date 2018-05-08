@@ -1,3 +1,6 @@
 - %w[01 02 03 startup].each do |name|
   = button_to name, chess_path(name), method: :get
+= form_tag('/chess', multipart: true)
+  = file_field_tag 'file'
+  = submit_tag 'Upload file *may have encoding issues' 
 = render partial: 'board', locals: { board: @board }

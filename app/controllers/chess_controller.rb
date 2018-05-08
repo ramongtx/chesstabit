@@ -9,4 +9,9 @@ class ChessController < ApplicationController
     @board = ChessBoard.new(File.open("app/files/#{@name}"))
     render :index
   end
+
+  def create
+    @board = ChessBoard.new(params[:file].read)
+    render :index
+  end
 end
