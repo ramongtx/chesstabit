@@ -1,1 +1,3 @@
+- %w[01 02 03 startup].each do |name|
+  = button_to name, chess_path(name), method: :get
 = render partial: 'board', locals: { board: @board }
