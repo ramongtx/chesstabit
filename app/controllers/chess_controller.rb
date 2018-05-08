@@ -11,7 +11,7 @@ class ChessController < ApplicationController
   end
 
   def create
-    @board = ChessBoard.new(params[:file].read)
+    @board = ChessBoard.new(params[:file])
     render :index
   end
 end
