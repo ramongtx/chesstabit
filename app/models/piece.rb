@@ -36,6 +36,6 @@ class Piece
   end
 
   def self.from_code(code)
-    Piece.new(*CODES[code])
+    Piece.new(*CODES.fetch(code, [nil, nil]))
   end
 end

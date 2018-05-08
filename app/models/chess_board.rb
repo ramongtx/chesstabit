@@ -70,7 +70,7 @@ class ChessBoard
   def piece_numbers_validation
     grouped_pieces = cells.values.group_by { |piece| [piece.color, piece.role] }
     grouped_pieces.each do |key, value|
-      errors.add(:cells, :invalid) if value.count > PIECE_NUMBERS[key]
+      errors.add(:cells, :invalid) if value.count > PIECE_NUMBERS.fetch(key, 0)
     end
   end
 end
